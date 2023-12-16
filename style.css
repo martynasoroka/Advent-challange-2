@@ -1,0 +1,181 @@
+
+*, :after, :before { box-sizing: border-box; }
+
+body {
+    padding: 0;
+    background:linear-gradient(#084835, black);
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.search {
+    margin: 40px 40px 0 0;
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    border: 1px solid black;
+}
+
+.search>i{
+    font-size: 20px;
+    padding: 10px 10px 10px 20px;
+}
+
+.search>input{
+    outline: none;
+    border: none;
+    width: 120px;
+}
+
+.logo {
+    width: 67px;
+    height: 67px;
+}
+
+.logoname {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.name {
+    padding-top: 20px;
+}
+
+
+/* FOTOGALERIE */
+
+.img {
+    width: 100%;
+}
+
+.foto {
+    padding-bottom: 10px;
+}
+
+.description {
+    position: relative;
+    top: 100%;
+    left: 50%;
+    text-align: center;
+    margin-top: 0;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.overview {
+    text-align: center;
+    margin-top: 0;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+}
+
+.galerie {
+    margin-top: 40px;
+}
+
+.movie-detail{
+    background-color: #084835;
+}
+
+
+.card-body {
+    margin-left: 20px;
+    color: black
+}
+
+.card-title{
+    font-size: 24px;
+
+}
+
+.card-text{
+    font-size: 18px;
+}
+
+.poster{
+    width: 100%;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+}
+
+@media (min-width:1000px) {
+
+
+/* FOTOGALERIE na desktop*/
+
+.galerie{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: none;
+}
+
+.foto{
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 30%;
+    width: 20px;
+    margin: 20px;
+}
+
+.foto img{
+    display: block;
+    transition: transform 0.3s; 
+    width: 100%;
+    
+}
+
+.overview {
+    color: white;
+    font-size: 10px;
+}
+
+.description {
+    display: inline;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    background-color: rgba(0, 0 ,0, 0.4);
+    color: white;
+    transition: transform 0.3s; 
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.foto:hover .description {
+    transform: translateY(-100%);
+}
+
+.foto:hover img{
+    transform: scale(1.2);
+}
+
+
+}
+
