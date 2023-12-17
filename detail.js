@@ -384,10 +384,7 @@ const movies = [
 
   detail.innerHTML = ""
 
-
   movies.forEach((key, index) => {
-
-    console.log()
 
     if (String(movies[index].id) === location.hash.slice(1)) {
         detail.innerHTML = `
@@ -414,8 +411,3 @@ const movies = [
         `
     }
 })
-
-  /*
-
-
-  */
