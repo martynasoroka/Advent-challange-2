@@ -3,7 +3,7 @@
 
 body {
     padding: 0;
-    background:linear-gradient(#084835, black);
+    background:#084835;
     font-family: 'Merriweather', serif;
     color: rgb(0, 0, 0);
     font-size: 16px;
@@ -89,7 +89,7 @@ body {
     margin-top: 40px;
 }
 
-.movie-detail{
+#movie-detail{
     background-color: #084835;
 }
 
@@ -123,28 +123,32 @@ a{
     margin-right: 5px;
 }
 
+.hide {
+    display: none;
+  }
+
 @media (min-width:1000px) {
 
 
 /* FOTOGALERIE na desktop*/
 
 .galerie{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .foto{
+ 
     position: relative;
     overflow: hidden;
-    flex: 1 1 30%;
-    width: 20px;
     margin: 20px;
+    /*flex: 1 1 30%; 
+    width: 20px;
+    margin: 20px; */
 }
 
 .foto img{
-    display: block;
+   /* display: block; */
     transition: transform 0.3s; 
     width: 100%;
     
@@ -179,3 +183,13 @@ a{
 
 }
 
+
+
+/*
+.galerie{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: none;
+}
+*/

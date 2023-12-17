@@ -39,7 +39,7 @@
         "release_date": "2023-10-13",
         "video": false,
         "vote_average": 8.2,
-        "vote_count": 82
+        "vote_count": 82,
       },
       {
         "adult": false,
@@ -379,8 +379,6 @@
       },
     ]
 
-  
-
     const list = document.querySelector(".galerie")
 
     list.innerHTML = ""
@@ -388,16 +386,65 @@
     movies.forEach((key, index) => {
       list.innerHTML += `
         <div class="foto">
-          <a href="detail.html#${movies[index].id}">
+          <a href="detail.html#${String(movies[index].id)}">
             <img src="https://www.themoviedb.org/t/p/original/${movies[index].backdrop_path}" alt="${movies[index].title}">
           </a>
           <div class="description">
           ${movies[index].title}
         </div>
-      `})
+    `})
 
 
+    const searchInput = document.querySelector("#search")
+
+    const movieCard = document.querySelector(".foto")
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase()
+      list.innerHTML = ``
+      movies.forEach(movie => {
+        if(movie.title.toLowerCase().includes(value)) {
+          list.innerHTML += `
+          <div class="foto">
+            <a href="detail.html#${String(movie.id)}">
+              <img src="https://www.themoviedb.org/t/p/original/${movie.backdrop_path}" alt="${movie.title}">
+            </a>
+            <div class="description">
+            ${movie.title}
+          </div>`
+        }
+      })
+    })
       /*
+
+
+            const searchInput = document.querySelector("#search")
+
+      const movieCard = document.querySelector(".foto")
+
+      searchInput.addEventListener("input", (e) => {
+        const value = e.target.value.toLowerCase()
+        movies.forEach((key, index) => {
+          if(movies[index].title.toLowerCase().includes(value)) {
+            list.innerHTML += `
+            <div class="foto">
+              <a href="detail.html#${String(movies[index].id)}">
+                <img src="https://www.themoviedb.org/t/p/original/${movies[index].backdrop_path}" alt="${movies[index].title}">
+              </a>
+              <div class="description">
+              ${movies[index].title}
+            </div>
+          `
+          } else {
+            list.innerHTML += `
+          `
+
+          }
+        })
+    })
+
+
+
       
 
           movies.forEach((key, index) => {

@@ -380,59 +380,42 @@ const movies = [
   ]
 
 
-  const detail = document.querySelector(".movie-detail")
+  const detail = document.querySelector("#movie-detail")
 
   detail.innerHTML = ""
 
+
   movies.forEach((key, index) => {
-    if (movies[index].id === location.hash.slice(1)) {
+
+    console.log()
+
+    if (String(movies[index].id) === location.hash.slice(1)) {
         detail.innerHTML = `
-					<div class="poster">
-						<img
-							src="https://www.themoviedb.org/t/p/original${movies[index].title}"
+					<div class="poster-big">
+						<img class="poster"
+							src="https://www.themoviedb.org/t/p/original${movies[index].backdrop_path}"
 							alt="${movies[index].title}"
-                            width="663"
 						/>
 					</div>
 					<div class="card-body">
 							<h5 class="card-title">${movies[index].title}</h5>
 							<p class="card-text">${movies[index].overview}</p>
-							<p class="card-text">
-								<small id="premiera"
+							<p class="release">
+								<small id="release-date"
 									>Release date: <strong>${dayjs(movies[index].release_date).format("D-M-YYYY")}</strong>
 							</p>
-                            <div class="back">
-                                <a href="index.html">
-                                <i class="fa fa-arrow-circle-o-left" style="font-size:36px"></i>
-                                </a>
-                                <p>Back to the list</p>
-                            </div>
+                <div class="back">
+                    <a href="index.html">
+                      <i class="fa fa-arrow-circle-o-left" style="font-size:36px"></i>
+                    </a>
+                    <p>Back to the list</p>
+               </div>
 					</div>
         `
-
     }
 })
 
   /*
 
-          detail.innerHTML = `<h1>LOL</h1>`
-        <div id="movie-detail">
-					<div class="poster">
-						<img
-							src="https://via.placeholder.com/663x909?text=Plak%C3%A1t"
-							alt="plakát"
-							width="663"
-							height="909"
-						/>
-					</div>
-					<div class="card-body">
-							<h5 class="card-title">${movies[index].title}</h5>
-							<p class="card-text">Tady bude dluhý popis filmu.</p>
-							<p class="card-text">
-								<small id="premiera"
-									>Premiéra <strong>24. prosince 2022</strong>
-							</p>
-					</div>
-			</div>
-    if (movies[index].id === location.hash.slice(1)) {
+
   */
